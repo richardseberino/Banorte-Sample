@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context path="Sample01">
+  <Resource name="jdbc/myConn" auth="Container" type="javax.sql.DataSource"
+               maxTotal="10" maxIdle="1" maxWaitMillis="10000"
+               username="root" password="xykjgs28" driverClassName="com.mysql.jdbc.Driver"
+               url="jdbc:mysql://localhost:3306/dev"/>
+
+
+<Environment name="urlservice1" value="http://localhost:8080/Sample01/RestClient"
+         type="java.lang.String" override="false"/>
+</Context>
