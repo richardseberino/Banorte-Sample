@@ -1,4 +1,10 @@
 # Banorte-Sample
+## 00 - Prepare
+```
+git clone https://github.com/richardseberino/Banorte-Sample
+```
+- Log in in your OpenShifrt
+
 ## 1 - Create a namespace
 ```oc create namespace banorte```
 
