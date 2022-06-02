@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-sample
+  namespace: banorte
+spec:
+  selector:
+    matchLabels:
+      app: app-sample
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: app-sample
+    spec:
+      containers:
+        - name: liberty
+          image: ibmcom/websphere-liberty:full-java11-openj9-ubi
+          ports:
+            - containerPort: 9080
+          volumeMounts:
+          - name: liberty
+            mountPath: /config/server.xml  
+            subPath: server.xml
+          - name: app
+            mountPath: /config/dropins/Sample01.war
+            subPath: Sample01.war
+          - name: driver
+            mountPath: /config/mysql-driver.jar  
+            subPath: mysql-driver.jar
+      volumes:
+        - name: liberty
+          configMap:
+            name: liberty-config
+        - name: app
+          configMap:
+            name: app-war
+        - name: driver
+          configMap:
+            name: driver-jdbc
+   

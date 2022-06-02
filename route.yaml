@@ -1,0 +1,15 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: app-sample
+  namespace: banorte
+  labels:
+    app: app-sample
+spec:
+  to:
+    kind: Service
+    name: app-sample
+    weight: 100
+  port:
+    targetPort: 9080
+  wildcardPolicy: None
