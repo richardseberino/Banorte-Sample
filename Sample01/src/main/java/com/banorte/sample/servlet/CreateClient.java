@@ -36,7 +36,6 @@ public class CreateClient extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//String u1 = "";
 		try
 		{
 			InitialContext ctx = new InitialContext();
