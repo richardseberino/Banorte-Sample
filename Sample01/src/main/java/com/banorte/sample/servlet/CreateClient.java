@@ -41,7 +41,6 @@ public class CreateClient extends HttpServlet {
 		{
 			InitialContext ctx = new InitialContext();
 			u1 = (String)ctx.lookup("java:comp/env/urlservice1");
-			//u1 = getServletContext().getInitParameter("url-service1");
 			System.out.println("Service URL " + u1);
 		}
 		catch (Exception e)
