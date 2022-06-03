@@ -20,6 +20,7 @@ oc create configmap driver-jdbc --from-file=mysql-driver.jar
 ### 3.1 - Start deploy
 ```
 oc create -f service-account.yaml
+oc adm policy add-scc-to-user privileged -z mysql -n banorte
 oc create -f mysql-ss.yaml
 oc create -f mysql-service.yaml
 
